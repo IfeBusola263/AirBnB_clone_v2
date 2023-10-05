@@ -13,10 +13,10 @@ def do_pack():
     '''
 
     # create a folder called versions
-    local('mkdir versions')
+    local('mkdir -p versions')
 
     # create the filename to store the generated .tgz file
-    archive = 'web_static_' + datetime.now().strftime(
+    archive = 'versions/web_static_' + datetime.now().strftime(
         "%Y%m%d%H%M%S") + '.tgz'
 
     # generate the file
@@ -24,9 +24,7 @@ def do_pack():
 
     # return the file path if command succeeded
     if cmd.succeeded:
-        with lcd("versions"):
-            path = local("pwd", capture=True)
-            return path + '/' + archive
+        return archive
 
     # return none
     else:
