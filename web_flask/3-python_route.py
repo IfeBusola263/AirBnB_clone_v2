@@ -40,7 +40,7 @@ def display_py(text):
     '''
     The serves the content with a variable
     '''
-    if text and '_' in text:
+    if '_' in text:
         new_text = text.replace('_', ' ')
         return f'Python {new_text}'
     else:
