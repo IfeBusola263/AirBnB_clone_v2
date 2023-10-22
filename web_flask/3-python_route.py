@@ -36,7 +36,7 @@ def display_c(text):
 
 @app.route('/python/', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def display_c(text):
+def display_py(text):
     '''
     The serves the content with a variable
     '''
