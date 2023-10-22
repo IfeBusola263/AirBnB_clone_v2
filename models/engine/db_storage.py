@@ -43,7 +43,8 @@ class DBStorage:
         """
         myDict = {}
         if (cls is not None):
-            queryData = self.__session.query(cls.__class__.__name__).all()
+            # queryData = self.__session.query(cls.__class__.__name__).all()
+            queryData = self.__session.query(cls).all()
             for data in queryData:
                 key = "{}.{}".format(data.__class__.__name__, data.id)
                 myDict[key] = data
