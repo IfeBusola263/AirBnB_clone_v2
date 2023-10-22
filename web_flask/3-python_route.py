@@ -36,7 +36,7 @@ def display_c(text):
 
 @app.route('/python/', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def display_py(text):
+def display_py(text='is cool'):
     '''
     The serves the content with a variable
     '''
@@ -44,7 +44,7 @@ def display_py(text):
         new_text = text.replace('_', ' ')
         return f'Python {new_text}'
     else:
-        return 'Python is cool'
+        return f'Python {text}'
 
 
 if __name__ == '__main__':
