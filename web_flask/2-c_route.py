@@ -29,7 +29,9 @@ def display_c(text):
     '''
     if '_' in text:
         new_text = text.replace('_', ' ')
-    return f'C {new_ text}'
+        return f'C {new_text}'
+    else:
+        return f'C {text}'
 
 
 # @app.route('/python/<text>', strict_slashes=False)
