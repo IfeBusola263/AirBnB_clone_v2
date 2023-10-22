@@ -75,3 +75,9 @@ class FileStorage:
             self.save()
         else:
             pass
+
+    def close(self):
+        '''
+        This nethod calls the deserialization method
+        '''
+        self.reload()

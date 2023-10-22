@@ -54,7 +54,8 @@ class DBStorage:
                     queryData = self.__session.query(value).all()
                     if (queryData):
                         for data in queryData:
-                            key = "{}.{}".format(data.__class__.__name__, data.id)
+                            key = "{}.{}".format(
+                                data.__class__.__name__, data.id)
                             myDict[key] = data
             return myDict
 
@@ -87,3 +88,9 @@ class DBStorage:
                 bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(session_factory)
         self.__session = Session()
+
+    def close(self):
+        '''
+        The method closes the current session
+        '''
+        self.__session.remove()
