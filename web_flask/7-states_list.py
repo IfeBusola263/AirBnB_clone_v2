@@ -12,12 +12,7 @@ app = Flask(__name__)
 def state_list():
     """This function returns the list of states in the database"""
     states = storage.all(State)
-    new_dict = {}
-
-    for id, state in states.items():
-        new_dict[state.id] = state.name
-
-    return render_template('7-states_list.html', states=new_dict)
+    return render_template('7-states_list.html', states=states)
 
 
 @app.teardown_appcontext
