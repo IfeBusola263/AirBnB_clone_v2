@@ -12,12 +12,17 @@ app = Flask(__name__)
 def state_list():
     """This function returns the list of states in the database"""
     states = storage.all(State)
-    return render_template('7-states_list.html', states=states)
+    new_dict = {}
+
+    for id, state in states.items():
+        new_dict[state.id] = state.name
+    
+    return render_template('7-states_list.html', states=new_dict)
 
 
 @app.teardown_appcontext
-def teardown_session():
-    """This function closes the current session after the request is completed
+def teardown_appcontext(exception=None):
+    """ This closes the session
     """
     storage.close()
 
