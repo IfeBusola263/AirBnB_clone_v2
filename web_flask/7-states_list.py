@@ -16,7 +16,7 @@ def state_list():
 
     for id, state in states.items():
         new_dict[state.id] = state.name
-    
+
     return render_template('7-states_list.html', states=new_dict)
 
 
