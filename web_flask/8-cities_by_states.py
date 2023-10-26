@@ -37,7 +37,6 @@ def state_cities_list():
                            states_cities=states_cities)
 
 
-
 @app.teardown_appcontext
 def teardown_appcontext(exception=None):
     """ This closes the session
