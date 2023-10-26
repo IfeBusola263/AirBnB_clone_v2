@@ -18,8 +18,7 @@ def state_by_id(id=None):
     # Either for DB or file storage
     if id is None:
         states = storage.all(State)
-        if states:
-            return render_template('9-states.html', states=states)
+        return render_template('9-states.html', states=states)
 
     # When We have an ID
     else:
