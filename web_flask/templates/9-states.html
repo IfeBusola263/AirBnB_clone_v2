@@ -5,7 +5,7 @@
   </HEAD>
   <BODY>
     {% if states == 'Not found!' or states|length == 0 %}
-    <H1>{{ states }}</H1>
+    <H1>Not found!</H1>
     {% elif states|length == 1 %}
     {% for key, value in states.items() %}
     <H1>State: {{ key.name }}</H1>
